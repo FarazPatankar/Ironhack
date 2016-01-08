@@ -1,3 +1,4 @@
+#end
 class BoggleBoard
 	attr_accessor :array_of_dices
 	def initialize
