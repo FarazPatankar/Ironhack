@@ -1,0 +1,206 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fnil\fcharset0 Menlo-Italic;\f4\fnil\fcharset0 HelveticaNeue-Medium;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red14\green115\blue192;\red242\green242\blue242;
+\red83\green83\blue83;\red15\green112\blue1;\red169\green14\blue26;\red171\green79\blue117;\red51\green110\blue109;
+\red184\green14\blue61;\red247\green238\blue241;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww25400\viewh16000\viewkind0
+\deftab720
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f0\fs28 \cf2 \expnd0\expndtw0\kerning0
+We're in California, and California grows oranges \'97 mostly {\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Orange_%28fruit%29#Navel_oranges"}}{\fldrslt \cf3 Washington navel oranges}} and {\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Valencia_orange"}}{\fldrslt \cf3 Valencia oranges}}, for the botanists among us.\
+Let's create a toy program to model an orange tree growing over the years. We plant the orange tree, wait for it to bear some fruit, and then pick all the oranges as soon as it does.\
+The script might look like this:\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f1\fs24 \cf2 \cb4 I\
+\
+tree\cf5 .\cf2 age! 
+\f2\b \cf6 until
+\f1\b0 \cf2  tree\cf5 .\cf2 any_oranges?\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf6 puts\cf2  \cf7 "Tree is 
+\f2\b \cf8 #\{
+\f1\b0 \cf2 tree\cf5 .\cf2 age
+\f2\b \cf8 \}
+\f1\b0 \cf7  years old and 
+\f2\b \cf8 #\{
+\f1\b0 \cf2 tree\cf5 .\cf2 height
+\f2\b \cf8 \}
+\f1\b0 \cf7  feet tall"\cf2 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f2\b \cf6 until
+\f1\b0 \cf2  tree\cf5 .\cf2 dead?\
+  basket \cf5 =\cf2  \cf5 []\cf2 \
+\
+  
+\f3\i \cf9 # It places the oranges in the basket
+\f1\i0 \cf2 \
+  
+\f3\i \cf9 # IT PLACES THE ORANGES IN THE BASKET
+\f1\i0 \cf2 \
+  
+\f2\b \cf6 while
+\f1\b0 \cf2  tree\cf5 .\cf2 any_oranges?\
+    basket \cf5 <<\cf2  tree\cf5 .\cf2 pick_an_orange!\
+  
+\f2\b \cf6 end
+\f1\b0 \cf2 \
+\
+  avg_diameter \cf5 =\cf2  
+\f3\i \cf9 # It's up to you to calculate the average diameter for this harvest.
+\f1\i0 \cf2 \
+\
+  \cf6 puts\cf2  \cf7 "Year 
+\f2\b \cf8 #\{
+\f1\b0 \cf2 tree\cf5 .\cf2 age
+\f2\b \cf8 \}
+\f1\b0 \cf7  Report"\cf2 \
+  \cf6 puts\cf2  \cf7 "Tree height: 
+\f2\b \cf8 #\{
+\f1\b0 \cf2 tree\cf5 .\cf2 height
+\f2\b \cf8 \}
+\f1\b0 \cf7  feet"\cf2 \
+  \cf6 puts\cf2  \cf7 "Harvest:     
+\f2\b \cf8 #\{
+\f1\b0 \cf2 basket\cf5 .\cf2 size
+\f2\b \cf8 \}
+\f1\b0 \cf7  oranges with an average diameter of 
+\f2\b \cf8 #\{
+\f1\b0 \cf2 avg_diameter
+\f2\b \cf8 \}
+\f1\b0 \cf7  inches"\cf2 \
+  \cf6 puts\cf2  \cf7 ""\cf2 \
+\
+  
+\f3\i \cf9 # Age the tree another year
+\f1\i0 \cf2 \
+  tree\cf5 .\cf2 age!\
+
+\f2\b \cf6 end
+\f1\b0 \cf2 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf6 puts\cf2  \cf7 "Alas, the tree, she is dead!"\cf2 \
+\pard\pardeftab720\sl800\sa200\partightenfactor0
+
+\f4\fs60 \cf2 \cb1 Learning Goals\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f0\fs28 \cf2 We're modeling a simple system with two objects: orange trees and oranges. We want you to get familiar with defining simple classes and relating them to each other. You'll also learn more about 
+\b variable scope
+\b0 , and the
+\b attr_reader/writer/accessor
+\b0  methods.\
+\pard\pardeftab720\sl800\sa200\partightenfactor0
+
+\f4\fs60 \cf2 External Resources\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\partightenfactor0
+\ls1\ilvl0
+\f0\fs28 \cf2 \kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+Video: {\field{\*\fldinst{HYPERLINK "http://www.youtube.com/watch?v=iLxKNUFHAnY"}}{\fldrslt \cf3 Variable Scopes in Ruby}}\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+StackOverflow: {\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/5046831/why-use-rubys-attr-accessor-attr-reader-and-attr-writer"}}{\fldrslt \cf3 Why use Ruby's attr_accessor, attr_reader, and attr_writer?}}\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+StackOverflow: {\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/4370960/what-is-attr-accessor-in-ruby"}}{\fldrslt \cf3 What is attr_accessor in Ruby?}}\
+\pard\pardeftab720\sl800\sa200\partightenfactor0
+
+\f4\fs60 \cf2 Objectives\
+\pard\pardeftab720\sl600\sa200\partightenfactor0
+
+\fs48 \cf2 Implement the OrangeTree and Orange classes\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f0\fs28 \cf2 Use 
+\f1\fs22 \cf10 \cb11 attr_reader
+\f0\fs28 \cf2 \cb1 , 
+\f1\fs22 \cf10 \cb11 attr_writer
+\f0\fs28 \cf2 \cb1 , and/or 
+\f1\fs22 \cf10 \cb11 attr_accessor
+\f0\fs28 \cf2 \cb1  so that we can call 
+\f1\fs22 \cf10 \cb11 tree.height
+\f0\fs28 \cf2 \cb1  and 
+\f1\fs22 \cf10 \cb11 tree.age
+\f0\fs28 \cf2 \cb1  to get a tree's height or age, respectively. Which of the three 
+\f1\fs22 \cf10 \cb11 attr_
+\f0\fs28 \cf2 \cb1  methods should you be using and why?\
+Do the same with the 
+\f1\fs22 \cf10 \cb11 Orange
+\f0\fs28 \cf2 \cb1  class so that we can call 
+\f1\fs22 \cf10 \cb11 orange.diameter
+\f0\fs28 \cf2 \cb1  to get an orange's diamater.\
+\pard\pardeftab720\sl600\sa200\partightenfactor0
+
+\f4\fs48 \cf2 Implement Aging\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f0\fs28 \cf2 As a tree ages, it grows taller. Eventually it starts bearing fruit and stops growing \'97 not necessarily at the same time. Some years later, the tree dies and can bear fruit no more!\
+Implement an 
+\f1\fs22 \cf10 \cb11 OrangeTree#age!
+\f0\fs28 \cf2 \cb1  instance method that will age your tree one year. Each year the tree should get some amount taller, and then eventually stop growing. You can decide when the tree stops growing.\
+Later, it should die. At this point your 
+\f1\fs22 \cf10 \cb11 OrangeTree
+\f0\fs28 \cf2 \cb1  class should:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\partightenfactor0
+\ls2\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	1.	}\expnd0\expndtw0\kerning0
+Have an 
+\f1\fs22 \cf10 \cb11 OrangeTree#height
+\f0\fs28 \cf2 \cb1  method which returns the tree's current height\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	2.	}\expnd0\expndtw0\kerning0
+Have an 
+\f1\fs22 \cf10 \cb11 OrangeTree#age
+\f0\fs28 \cf2 \cb1  method which returns the tree's current age\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	3.	}\expnd0\expndtw0\kerning0
+Have an 
+\f1\fs22 \cf10 \cb11 OrangeTree#age!
+\f0\fs28 \cf2 \cb1  method which ages the tree one year and grows the tree a little, if it's able to grow\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 {\listtext	4.	}\expnd0\expndtw0\kerning0
+Have an 
+\f1\fs22 \cf10 \cb11 OrangeTree#dead?
+\f0\fs28 \cf2 \cb1  method which returns 
+\f1\fs22 \cf10 \cb11 true
+\f0\fs28 \cf2 \cb1  if the tree has died\
+\pard\pardeftab720\sl600\sa200\partightenfactor0
+
+\f4\fs48 \cf2 Implement Orange-picking\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f0\fs28 \cf2 After some number of years \'97 you decide \'97 the orange tree starts to bear fruit. Write a method 
+\f1\fs22 \cf10 \cb11 OrangeTree#any_oranges?
+\f0\fs28 \cf2 \cb1 which returns 
+\f1\fs22 \cf10 \cb11 true
+\f0\fs28 \cf2 \cb1  if there are any oranges on the tree and 
+\f1\fs22 \cf10 \cb11 false
+\f0\fs28 \cf2 \cb1  otherwise.\
+Also write a method 
+\f1\fs22 \cf10 \cb11 OrangeTree#pick_an_orange!
+\f0\fs28 \cf2 \cb1  which will return one of the oranges on the tree (an instance of the
+\f1\fs22 \cf10 \cb11 Orange
+\f0\fs28 \cf2 \cb1  class). If you try to pick an orange when there are no oranges left, your code should raise a 
+\f1\fs22 \cf10 \cb11 NoOrangesError
+\f0\fs28 \cf2 \cb1 (defined in the source code).\
+You'll also have to implement the 
+\f1\fs22 \cf10 \cb11 Orange
+\f0\fs28 \cf2 \cb1  class at this point, including 
+\f1\fs22 \cf10 \cb11 Orange.new
+\f0\fs28 \cf2 \cb1  and 
+\f1\fs22 \cf10 \cb11 Orange#diameter
+\f0\fs28 \cf2 \cb1 .\
+\pard\pardeftab720\sl600\sa200\partightenfactor0
+
+\f4\fs48 \cf2 Does the script run?\
+\pard\pardeftab720\sl400\sa200\partightenfactor0
+
+\f0\fs28 \cf2 Does the script at the top of the challenge run and output what you'd expect? (Hint: you have to be clear about your expectations before you an answer that question.)\
+If not, what are the errors or unexpected behaviors? Do you understand them?\
+\pard\pardeftab720\sl360\partightenfactor0
+
+\fs26 \cf2 \
+}

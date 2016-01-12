@@ -1,0 +1,476 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Medium;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-Bold;\f4\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red255\green255\blue255;\red184\green14\blue61;
+\red247\green238\blue241;\red15\green112\blue1;\red242\green242\blue242;\red0\green0\blue255;\red19\green8\blue105;
+\red51\green110\blue109;\red83\green83\blue83;\red66\green1\blue120;\red169\green14\blue26;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\margl1440\margr1440\vieww14940\viewh15500\viewkind0
+\deftab720
+\pard\pardeftab720\sl800\sa200
+
+\f0\fs60 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Overview\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 In this challenge you will work with a collection of simple 
+\f2\fs22 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Student
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  objects.\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Your program will create arrays of student data, and compute the average scores for each student. An optional challenge will ask you to create a search function.\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl600\sa200
+
+\f0\fs48 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Topics covered\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 To achieve this, you will use knoweledge of the following:\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls1\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Designing your own objects\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Initializing and populating and array\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Compute from arrays\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Basic searches\cb1 \
+\pard\pardeftab720\sl600\sa200
+
+\f0\fs48 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Resources\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls2\ilvl0
+\f1\fs28 \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 http://www.ruby-doc.org\cb1 \
+\pard\pardeftab720\sl600\sa200
+
+\f0\fs48 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Objective 1: Create an Array of Students\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+
+\f1\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Part 1. Create an array 
+\f3\fs22 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 students
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  with 5 Students.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Each student should be assigned a 
+\f2\fs22 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 first_name
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 , and 5 test scores (scores are between 0 and 100) when it is created. The first Student should be named 
+\f2\fs22 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 "Alex"
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  with scores
+\f2\fs22 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 [100,100,100,0,100]
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 .\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+
+\i \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Sample code for Student (included in the the gist):
+\i0 \cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl320
+
+\f3\b\fs24 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 class
+\f2\b0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  
+\f3\b \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 Student
+\f2\b0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+  \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 attr_accessor\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :scores\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 , \cf9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec9 :first_name\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\
+  
+\f3\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 def
+\f2\b0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  \cf8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 initialize\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 (args)   
+\f4\i \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 #Use named arguments!
+\f2\i0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+    
+\f4\i \cf10 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec10 #your code here
+\f2\i0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+  
+\f3\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end
+\f2\b0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+
+\f3\b \cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 end
+\f2\b0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl400\sa200
+
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 After you've updated the 
+\f2\fs22 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 Student
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  class and populated your 
+\f2\fs22 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 students
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  array, this driver code should pass:\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl320
+
+\f2\fs24 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 p\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  students\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ].\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 first_name \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ==\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 "Alex"\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 p\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  students\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ].\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 scores\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 .\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 length \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ==\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 5
+\f2\b0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 p\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  students\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ].\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 scores\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ]\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ==\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  students\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ].\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 scores\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 4
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ]\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 p\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  students\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ].\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 scores\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 3
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ]\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ==\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl400\sa200
+
+\f1\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Part 2. Compute and assign a score average and a letter grade to each student.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  Letter grades are based on the average (A for >=90%, B for >=80%, C for >= 70%, D for >= 60% and F for < 60%).\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 This driver code should pass:\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl320
+
+\f2\fs24 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 p\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  students\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ].\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 average \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ==\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 80
+\f2\b0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 p\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  students\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ].\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 letter_grade \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ==\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 'B'\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl400\sa200
+
+\f1\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Part 3. Write a linear_search method that searches the student array
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  for a student's 
+\f2\fs22 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 first_name
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  and returns the position of that student if they are in the array. If the student is not in the array then the method should return -1.\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 This driver code should pass:\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl320
+
+\f2\fs24 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 p\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  linear_search(students, \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 "Alex"\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ) \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ==\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 p\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  linear_search(students, \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 "NOT A STUDENT"\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ) \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ==\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 1
+\f2\b0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl600\sa200
+
+\f0\fs48 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You are done when...\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 The tests defined at the end of each part will pass.\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl600\sa200
+
+\f0\fs48 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 What to submit\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 A working program that meets the expectations above, including driver code that includes these tests.\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl600\sa200
+
+\f0\fs48 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 OPTIONAL Objective 2: Let's Add Sorting\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Let's extend our functionality to sorting.\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You will write code for the following 2 parts. Start with the Student Class that already passes all the driver code in Objective 1. Add the Driver Code provided and methods to make the Driver Code run.\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+
+\b \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Part 1. Write a 
+\f3\fs22 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec4 sort
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  method that sorts the array of students by their SSN.
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  You will first need to add a unique SSN to each student. (Assign "111-11-1111" to Alex for the tests.) You may write your own method from scratch or use existing ruby methods.\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 This driver code (or equivalent driver code if you implementation of sort requires it) should pass:\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl320
+
+\f2\fs24 \cf2 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 students\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 .\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 sort\
+\pard\pardeftab720\sl320
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 p\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  students\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ].\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ssn \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 <\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  students\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 1
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ].\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ssn\
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 p\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  students\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 3
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ].\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ssn \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 >\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  students\cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 [
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ].\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ssn\
+\pard\pardeftab720\sl400\sa200
+
+\f1\b\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Part 2. Write a binary_search method that searches the student array
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  for a student ssn and returns the position of that student if they are in the array. If the student is not in the array then the method should return -1. You can write a recursive or iterative version of binary_search.\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+\cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 This driver code should pass:\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl320
+
+\f2\fs24 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 p\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  binary_search(students, \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 "111-11-1111"\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ) \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ==\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 0
+\f2\b0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\cf6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec6 p\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  binary_search(students, \cf13 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec13 "000-00-0000"\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ) \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 ==\cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  \cf11 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec11 -
+\f3\b \cf12 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec12 1
+\f2\b0 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\sl600\sa200
+
+\f0\fs48 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 You are done when...\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400
+\ls3\ilvl0
+\f1\fs28 \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 All the driver code runs.\cb1 \
+\ls3\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Your code is efficient and well factored.\cb1 \
+\pard\pardeftab720\sl600\sa200
+
+\f0\fs48 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 What to submit\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 A working program that meets the expectations above, including driver code that passes the tests.\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl800\sa200
+
+\f0\fs60 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Reflection\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl400\sa200
+
+\f1\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 Arrays are kind of a big deal. If you are fuzzy on arrays, 
+\b \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 fix it now
+\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0  before moving to new material.\cb1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\pard\pardeftab720\sl360
+
+\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+}
