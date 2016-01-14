@@ -6,7 +6,7 @@ class DarkRoom
 
 	def welcome
 		puts "You're in a dark room, it is probably very dark in here."
-		puts "If you want to move to the Dungeon, please type 'S'"
+		puts "If you want to move to the Forest, please type 'S'"
 		puts ">"
 	end
 end
@@ -14,12 +14,12 @@ end
 class Forest
 	attr_reader :available_directions
 	def initialize
-		@available_directions = ["W"]
+		@available_directions = ["W", "N"]
 	end
 
 	def welcome
 		puts "You're in a forest, we have many dangerous animals here, please tread lightly."
-		puts "If you want to move to the Dungeon, please type 'W'"
+		puts "If you want to move to the Beach, type 'W'. Type 'N' to go back to the Dark Room"
 		puts ">"
 	end
 end
@@ -27,12 +27,12 @@ end
 class Beach
 	attr_reader :available_directions
 	def initialize
-		@available_directions = "E"
+		@available_directions = ["S", "E"]
 	end
 
 	def welcome
 		puts "You're on a beach, beware of sharks"
-		puts "If you want to move to the Dungeon, please type 'E'"
+		puts "If you want to move to the Dungeon, type 'S'. Type 'E' to go back to the Forest"
 		puts ">"
 	end
 end
@@ -40,12 +40,12 @@ end
 class Dungeon
 	attr_reader :available_directions
 	def initialize
-		@available_directions = ["S"]
+		@available_directions = ["E","N"]
 	end
 
 	def welcome
 		puts "Welcome to the Dungeon. Surprisingly, there are no monsters here."
-		puts "If you want to move to the Airport, please type 'S'"
+		puts "If you want to move to the Airport, type 'E'. Type 'N' to go back to the Beach"
 		puts ">"
 	end
 end
@@ -53,12 +53,12 @@ end
 class Airport
 	attr_reader :available_directions
 	def initialize
-		@available_directions = ["N"]
+		@available_directions = ["N","W"]
 	end
 
 	def welcome
 		puts "Wecome to the Airport. This is where you can leave my game. You don't really want to, do you?"
-		puts "You have reached the end of the game, please type 'N' to exit."
+		puts "If you want to go back to the Dungeon, type 'W' or else type 'N' to leave the game."
 		puts ">"
 	end
 end

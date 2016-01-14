@@ -14,7 +14,6 @@ class Game
 		user_input = gets.chomp
 		if user_input.downcase == "yes"
 			@rooms[@current_room].welcome
-			puts "Enter 'exit' at any time to leave the game."
 		else
 			puts "Goodbye"
 		end
@@ -24,12 +23,19 @@ class Game
 	def play
 		user_input = gets.chomp
 		if @current_room < @rooms.length-1
-			if @rooms[@current_room].available_directions.include?(user_input.upcase)
+			if @rooms[@current_room].available_directions[0].include?(user_input.upcase)
 				@current_room += 1
 				@rooms[@current_room].welcome
 				play
+			elsif @rooms[@current_room].available_directions[1].nil?
+				puts "You cannot move in that direction. Please move in another direction."
+				play
+			elsif @rooms[@current_room].available_directions[1].include?(user_input.upcase)
+				@current_room -= 1
+				@rooms[@current_room].welcome
+				play
 			else
-				puts "You cannot move in that direction."
+				puts "You cannot move in that direction. Please move in another direction."
 				play
 			end
 		else
