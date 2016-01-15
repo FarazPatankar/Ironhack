@@ -1,6 +1,6 @@
 class Auth
 	attr_reader :username, :password
-	def initialize
+	def initialize(username, password)
 		@username = username
 		@password = password
 	end
@@ -11,7 +11,7 @@ class Auth
 		puts "Password:"
 		password = gets.chomp
 
-		if username == "nizar" && password == "swordfish"
+		if username == @username && password == @password
 			puts "Welcome back #{username}"
 			true
 		else

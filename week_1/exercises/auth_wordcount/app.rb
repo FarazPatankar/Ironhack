@@ -1,7 +1,7 @@
 require_relative("lib/auth.rb")
 require_relative("lib/wordcount.rb")
 
-auth = Auth.new
+auth = Auth.new("nizar", "swordfish")
 wordcount = WordCount.new
 if auth.login == true
 	wordcount.get_text
