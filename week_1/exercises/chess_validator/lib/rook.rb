@@ -5,10 +5,6 @@ class Rook < Piece
 	def move?(dst_x, dst_y)
 		dx, dy = get_difference(dst_x, dst_y)
 
-		if straight_move?(dx, dy)
-			true
-		else
-			false
-		end
+		straight_move?(dx, dy)
 	end
 end

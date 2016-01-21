@@ -5,10 +5,6 @@ class Bishop < Piece
 	def move?(dst_x, dst_y)
 		dx, dy = get_difference(dst_x, dst_y)
 
-		if diagonal_move?(dx, dy)
-			true
-		else
-			false
-		end
+		diagonal_move?(dx, dy)
 	end
 end
