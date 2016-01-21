@@ -1,4 +1,5 @@
 require_relative("lib/modules/coords_difference.rb")
+require_relative("lib/modules/diagonal_mover.rb")
 require_relative("lib/piece.rb")
 require_relative("lib/king.rb")
 require_relative("lib/rook.rb")
@@ -93,6 +94,18 @@ game.add_piece(7, 1, white_pawn_8)
 game.move?(4,0 , 5,1)
 game.move?(0,7 , 0,3)
 
+puts "White Bishops"
+puts "Good"
+game.move?(5,0 , 3,2)
+puts "Bad"
+game.move?(2,0 , 5,5)
+
+puts "White Queen"
+puts "Good"
+game.move?(3,0 , 6,3)
+puts "Bad"
+game.move?(3,0 , 4,5)
+
 # puts "\nTesting the King"
 
 # puts "Good moves"
@@ -120,10 +133,8 @@ game.move?(0,7 , 0,3)
 # puts "\nTesting the Bishop"
 # puts "Good moves"
 # p white_bishop_1.move?(5,3)
-# p white_bishop_2.move?(3,2)
 
 # puts "Bad moves"
-# p white_bishop_1.move?(5,5)
 # p white_bishop_2.move?(8,8)
 
 # puts "------------------------------------"
@@ -144,11 +155,8 @@ game.move?(0,7 , 0,3)
 
 # puts "Good moves"
 # p white_queen.move?(3,4)
-# p white_queen.move?(6,3)
 
 # puts "Bad moves"
-# p white_queen.move?(8,8)
-# p white_queen.move?(4,5)
 
 # puts "-----------------------------------------"
 
