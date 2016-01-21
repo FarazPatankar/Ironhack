@@ -1,0 +1,28 @@
+
+<h1>Welcome to TODO LIST!</h1>
+
+<% @new_todoList.tasks.each do |task| %>
+	<ul>
+		<li>
+		<% if task.completed? %>
+			<strike><%= task.content %></strike>
+
+			<form action="/undo_task/<%= task.id %>" method="POST">
+				<button type="submit" name="task_undone" value="<%= task.id %>">UNDO</button>
+			</form>
+		<% else %>			
+			<%= task.content %>
+
+			<form action="/complete_task/<%= task.id %>" method="POST">
+				<button type="submit" name="task_completed" value="<%= task.id %>">DONE</button>
+			</form>
+		<% end %>
+		<form action="/delete_task/<%= task.id %>" method="POST">
+			<button type="submit" name="task_deleted" value="<%= task.id %>">DELETE</button>
+		</form>
+		</li>
+	</ul>
+<% end %>
+<a href="/new_task">
+	Add New Task
+</a>
