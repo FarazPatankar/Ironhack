@@ -1,19 +1,9 @@
-class King
-	attr_reader :color
-	def initialize(pos_x, pos_y, color)
-		@pos_x = pos_x
-		@pos_y = pos_y
-		@color = color
-	end
+class King < Piece
+	include CoordsDifference
 
 	def move?(dst_x, dst_y)
-		dx = (dst_x - @pos_x).abs
-		dy = (dst_y - @pos_y).abs
+		dx, dy = get_difference(dst_x, dst_y)
 
-		if (dx == 0 || dx == 1) && (dy == 0 || dy == 1)
-			true
-		else
-			false
-		end
+		(dx == 0 || dx == 1) && (dy == 0 || dy == 1)
 	end
 end
