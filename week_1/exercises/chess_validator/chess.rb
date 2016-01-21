@@ -1,3 +1,4 @@
+require_relative("lib/piece.rb")
 require_relative("lib/king.rb")
 require_relative("lib/rook.rb")
 require_relative("lib/bishop.rb")
@@ -83,6 +84,91 @@ game.add_piece(1, 1, white_pawn_2)
 game.add_piece(2, 1, white_pawn_3)
 game.add_piece(3, 1, white_pawn_4)
 game.add_piece(4, 1, white_pawn_5)
-game.add_piece(5, 1, white_pawn_6)
+# game.add_piece(5, 1, white_pawn_6)
 game.add_piece(6, 1, white_pawn_7)
 game.add_piece(7, 1, white_pawn_8)
+
+
+game.move?(4,0 , 5,1)
+game.move?(0,7 , 0,3)
+
+# puts "\nTesting the King"
+
+# puts "Good moves"
+# p white_king.move?(5,1)
+# p white_king.move?(4,1)
+
+# puts "Bad moves"
+# p white_king.move?(6,1)
+# p white_king.move?(0,5)
+
+# puts "------------------------------------"
+
+# puts "\nTesting the Rook"
+
+# puts "Good moves"
+# p black_rook_1.move?(0,3)
+# p black_rook_2.move?(4,7)
+
+# puts "Bad moves"
+# p white_rook_1.move?(3,3)
+# p white_rook_2.move?(5,5)
+
+# puts "------------------------------------"
+
+# puts "\nTesting the Bishop"
+# puts "Good moves"
+# p white_bishop_1.move?(5,3)
+# p white_bishop_2.move?(3,2)
+
+# puts "Bad moves"
+# p white_bishop_1.move?(5,5)
+# p white_bishop_2.move?(8,8)
+
+# puts "------------------------------------"
+
+# puts "\nTesting the Knight"
+
+# puts "Good moves"
+# p white_knight_1.move?(3,2)
+# p white_knight_2.move?(2,2)
+
+# puts "Bad moves"
+# p white_knight_1.move?(5,5)
+# p white_knight_2.move?(8,8)
+
+# puts "--------------------------------------"
+
+# puts "\nTesting the Queen"
+
+# puts "Good moves"
+# p white_queen.move?(3,4)
+# p white_queen.move?(6,3)
+
+# puts "Bad moves"
+# p white_queen.move?(8,8)
+# p white_queen.move?(4,5)
+
+# puts "-----------------------------------------"
+
+# puts "\nTesting the White Pawn"
+
+# puts "Good moves"
+# p white_pawn_1.move?(0,3)
+# p white_pawn_2.move?(1,2)
+
+# puts "Bad moves"
+# p white_pawn_1.move?(0,4)
+# p white_pawn_2.move?(0,1)
+
+# puts "--------------------------------------------"
+
+# puts "\nTesting the Black Pawn"
+
+# puts "Good moves"
+# p black_pawn_1.move?(0,4)
+# p black_pawn_2.move?(1,5)
+
+# puts "Bad moves"
+# p black_pawn_1.move?(0,7)
+# p black_pawn_2.move?(1,3)
