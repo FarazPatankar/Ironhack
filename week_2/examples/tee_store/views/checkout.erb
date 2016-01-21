@@ -1,0 +1,13 @@
+<h1>Faraz's T-Shirt Store</h1>
+
+<h2>Checkout</h2>
+
+<ul>
+	<% @checkout_array.each do |tshirt| %>
+	<li>
+		<%=tshirt%>
+	</li>
+	<%end%>
+</ul>
+
+<a href="/"> Back to home page </a>

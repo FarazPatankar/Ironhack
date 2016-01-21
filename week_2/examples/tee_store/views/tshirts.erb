@@ -1,0 +1,16 @@
+<h1>Faraz's T-Shirt Store</h1>
+
+<p>Our amazing products are:</p>
+
+<ul>
+	<% @shirts.each_with_index do |shirt, index| %>
+	<li>
+	<a href="/tshirts/<%= index + 1 %>">
+		<%=shirt%>
+	</a>
+	</li>
+	<% end %>
+</ul>
+
+<p>The number of items in your cart is : <%=@number_of_items%></p>
+<a href="/checkout"> Checkout </a>
