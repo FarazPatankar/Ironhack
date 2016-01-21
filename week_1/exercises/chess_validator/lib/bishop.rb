@@ -1,7 +1,8 @@
 class Bishop < Piece
+  include CoordsDifference
+
 	def move?(dst_x, dst_y)
-		dx = (dst_x - @pos_x).abs
-		dy = (dst_y - @pos_y).abs
+		dx, dy = get_difference(dst_x, dst_y)
 
 		if (dx == dy)
 			true

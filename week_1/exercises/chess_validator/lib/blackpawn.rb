@@ -1,7 +1,8 @@
 class BlackPawn < Piece
+	include CoordsDifference
+
 	def move?(dst_x, dst_y)
-		dx = (dst_x - @pos_x)
-		dy = (dst_y - @pos_y)
+		dx, dy = get_difference(dst_x, dst_y, signed: true)
 
 		if (@pos_y == 6) && (dx == 0 && (dy == -2 || dy == -1))
 			true
