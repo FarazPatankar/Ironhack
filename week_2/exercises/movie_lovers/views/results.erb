@@ -1,0 +1,31 @@
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<h1>IMDB gem test</h1>
+
+<p>Which of these movies has the release date: <%= @release_date %>?</p>
+
+<p>
+  The search term <strong><%=@search_string%></strong>
+  resulted in <%= @list_length %> movies.
+</p>
+<div class="main">
+<%@list.each_with_index do |movie, index|%>
+
+	<% if @random_movie.title == movie.title %>
+		<div class="set">
+			<img class="posters" src="<%= movie.poster %>" <%# onClick="alert('yay') %>>
+			<form class="click" action="/correct" method="POST">
+				<button type="submit">Click</button>
+			</form>
+		</div>
+	<% else %>
+		<div class="set">
+			<img class="posters" src="<%= movie.poster %>" <%# onClick="alert('incorrect') %>>
+			<form class="click" action="/wrong" method="POST">
+				<button type="submit">Click</button>
+			</form>
+		</div>
+	<% end %>
+
+<%end%>
+</div>

@@ -1,0 +1,19 @@
+.main {
+	width: 900px;
+	margin: 0 auto;
+}
+
+.posters {
+	height: 250px;
+	width: 100%;
+}
+
+.set {
+	width: 33%;
+	display: inline-block;
+}
+
+.click {
+	text-align: center;
+	margin: 5px;
+}
