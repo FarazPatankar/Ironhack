@@ -1,0 +1,5 @@
+<p>This post was created on <%= @post.date %></p>
+<h1><%= @post.title %></h1>
+<p><%= @post.text %></p>
+<p>Post by : <a href="/posts_by/<%= @post.author %>"> <%= @post.author %></a> in category : <a href="/posts_in/<%= @post.category %>"> <%= @post.category %></a></p>
+

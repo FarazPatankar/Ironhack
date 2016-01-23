@@ -1,0 +1,7 @@
+<p>List of posts by <%= @author %></p>
+<br>
+<%@posts_by_author.each do |post|%>
+	<p><strong><%=post.title%></strong></p>
+	<p><%=post.text%></p>
+	<br>
+<%end%>

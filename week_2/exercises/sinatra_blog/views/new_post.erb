@@ -1,0 +1,16 @@
+
+<h1>Welcome to My Blog</h1>
+
+<h2>Create a new post:</h2>
+
+<form action="/create_post" method="POST">
+	<input type="string" name="title" placeholder="Post Title">
+
+	<input type="string" name="content" placeholder="Post Content">
+
+	<input type="string" name="author" placeholder="Post Author">
+
+	<input type="string" name="category[]" placeholder="Post Category">
+
+	<button type="submit">Create</button>
+</form>
