@@ -1,0 +1,74 @@
+body {
+	background-image: url(https://trello-backgrounds.s3.amazonaws.com/53baf533e697a982248cd73f/4200x4200/48dbf0b5a546541e847e267a5dcd2201/shutterstock_134707556.jpg);
+	overflow: hidden;
+	background-size: cover;
+	font-size: 14px;
+	font-family: Helvetica;
+	line-height: 18px;
+}
+
+.grey-back {
+	background-color: #e2e4e6;
+	border-radius: 5px;
+}
+
+.grey-back-margin {
+	background-color: #e2e4e6;
+	margin: 5px;
+}
+
+.white-back {
+	background-color: #fff;
+}
+
+.advert {
+	background-color: #efe3ce;
+	font-size: 1pc;
+	font-weight: 700;
+	line-height: 20px;
+	position: relative;
+	text-align: center;
+}
+
+.row {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.ad-text {
+	padding: 10px;
+	vertical-align: middle;
+}
+
+.center-align {
+	text-align: center;
+}
+
+.hr-color {
+	border-color: black;
+}
+
+.special-width {
+	width: 32%;
+	border-radius: 5px;
+}
+
+.make-white {
+	color: white;
+	margin: 3px;
+}
+
+.nav-stuff {
+	color: #fff;
+	display: inline-block;
+	height: 15px;
+	font-weight: 700;
+	line-height: 15px;
+	padding: 8px;
+	text-transform: uppercase;
+}
+
+.nav-stuff-btn {
+	font-weight: 700;
+	margin-right: 8px;
+}
