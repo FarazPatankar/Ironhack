@@ -1,0 +1,89 @@
+body {
+	background-color: #f5f5f5;
+}
+
+.white-back {
+	background-color: #fff;
+	margin: 10px auto;
+	padding: 20px;
+	border-radius: 5px;
+}
+
+.top-stuff {
+	color: #aaa;
+}
+
+img {
+	margin: 5px;
+}
+
+.top-stuff img {
+	border-radius: 25px;
+}
+
+.white-back img {
+	border-radius: 5px;
+}
+
+.make-gold {
+	color: #f3ab4c;
+}
+
+.make-red {
+	color: #f64f5a;
+}
+
+.border-me {
+	border: 1px solid #aaa;
+	padding: 2px;
+	margin: 3px;
+}
+
+.make-grey {
+	color: #aaa;
+}
+
+p {
+	font-size: 22px;
+	line-height: 25px;
+	margin-top: 10px;
+}
+
+.comment-btn {
+	color: #2889d8;
+	font-size: 15px;
+	border: 1px solid #2889d8;
+	border-radius: 20px;
+	padding: 10px 20px;
+}
+
+.make-weird {
+	color: #797979;
+	font-size: 25px;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+
+.make-red {
+	color: red;
+}
+
+.username {
+	display: block;
+}
+
+.user-photo {
+	padding: 0;
+}
+
+.user {
+	padding: 0;
+}
+
+.make-space {
+	margin: 10px;
+}
+
+.make-block {
+	display: block;
+}
