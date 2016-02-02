@@ -1,0 +1,11 @@
+<h1>Contacts with the letter <%= @letter %> are:</h1>
+
+<ul>
+	<% @contacts.each do |contact| %>
+		<% if contact.name.chars.first.downcase == @letter.downcase %>
+	<li>
+		<a href="/contacts/<%= contact.id %>"><%= contact.name %></a>
+	</li>
+		<% end %>
+	<% end %>
+</ul>

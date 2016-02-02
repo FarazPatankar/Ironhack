@@ -8,6 +8,6 @@
 
 Contact.create(name: "Josh", address: "Pittsburg", phone_number: "000-000-0000", email: "jalexy.sexy@gmail.com", status: true)
 Contact.create(name: "Anais", address: "France", phone_number: "111-111-1111", email: "awesomeanais@gmail.com", status: true)
-Contact.create(name: "Bianca", address: "Miami", phone_number: "222-222-2222", email: "bubblybianca@gmail.com")
-Contact.create(name: "Mat", address: "DC", phone_number: "333-333-3333", email: "onetmat@gmail.com")
-Contact.create(name: "Pete", address: "Denver", phone_number: "444-444-4444", email: "pistolpete@gmail.com")
+Contact.create(name: "Bianca", address: "Miami", phone_number: "222-222-2222", email: "bubblybianca@gmail.com", status: false)
+Contact.create(name: "Mat", address: "DC", phone_number: "333-333-3333", email: "onetmat@gmail.com", status: false)
+Contact.create(name: "Pete", address: "Denver", phone_number: "444-444-4444", email: "pistolpete@gmail.com", status: false)

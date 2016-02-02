@@ -4,6 +4,8 @@
 <p>Email: <%= @contact.email %></p>
 <p>Status: <%= @contact.status %></p>
 
-<form>
-	<button type="submit"></button>
+<form action="/make_favorite" method="POST">
+	<input type="hidden" name="id" value="<%= @contact.id %>">
+	<button type="submit">Add as favorite</button>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 </form>

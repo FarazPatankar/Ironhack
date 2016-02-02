@@ -36,4 +36,18 @@ class ContactsController < ApplicationController
 	def favorite_contacts
 		@contacts = Contact.all.order("name ASC")
 	end
+
+	def make_favorite
+		id = params[:id]
+		contact = Contact.find_by(id: id)
+		contact.status = true
+		contact.save
+
+		redirect_to("/contacts")
+	end
+
+	def search
+		@letter = params[:letter]
+		@contacts = Contact.all.order("name ASC")
+	end
 end
