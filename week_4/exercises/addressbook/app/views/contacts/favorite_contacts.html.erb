@@ -1,0 +1,12 @@
+<ul>
+	<% @contacts.each do |contact| %>
+		<% if contact.status %>
+			<li>
+				<a href="/contacts/<%= contact.id %>"><%= contact.name %></a>
+			</li>
+		<% end %>
+	<% end %>
+</ul>
+
+<p><a href="/add">Add a new contact</a></p>
+<p><a href="/favorite_contacts">List of favorite contacts</a></p>
