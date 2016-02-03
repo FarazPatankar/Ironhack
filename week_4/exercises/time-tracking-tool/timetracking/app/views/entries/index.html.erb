@@ -5,6 +5,7 @@
 	<li>
 		<%= entry.hours %> h
 		<%= entry.minutes %> m
+		<%= link_to("Edit", edit_project_entry_path(@project, entry)) %>
 	</li>
 	<% end %>
 </ul>
