@@ -5,13 +5,21 @@ Rails.application.routes.draw do
 
   get "/" => "site#home"
 
-  get "/contact" => "site#contact"
+  # get "/contact" => "site#contact"
 
-  get "/projects" => "projects#index"
+  # get "/projects" => "projects#index"
 
-  get "/projects/:id" => "projects#show"
+  # get "/projects/:id" => "projects#show"
 
-  get "projects/:project_id/entries" => "entries#index"
+  # get "projects/:project_id/entries" => "entries#index"
+
+  # get "/projects/:project_id/entries/new" => "entries#new"
+
+  # post "/projects/:project_id/entries" => "entries#create", as: :project_entries
+
+  resources(:projects, only: [:show, :new, :create, :index]) do
+    resources(:entries, only: [:index, :new, :create])
+  end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

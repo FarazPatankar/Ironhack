@@ -12,4 +12,9 @@ class EntriesController < ApplicationController
 			render "projects/no_projects"
 		end
 	end
+
+	def new
+		@project = Project.find(params[:project_id])
+		@entry = @project.entries.new
+	end
 end
