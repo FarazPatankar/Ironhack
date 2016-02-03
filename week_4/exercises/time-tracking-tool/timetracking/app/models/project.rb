@@ -1,5 +1,11 @@
 class Project < ActiveRecord::Base
+	validates :name, presence: true
+	validates :name, uniqueness: true
+	validates :name, length: {maximum: 30}
+	validates :name, format: {with: /(\w\s)+/}
+
 	has_many :entries
+
 	def self.clean_old
 		d = Date.current
 		d = d - 1.week
