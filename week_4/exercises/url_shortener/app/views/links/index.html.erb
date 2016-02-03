@@ -1,0 +1,25 @@
+<h1>URL Shortener!</h1>
+
+<form action="/shortlink" method="POST">
+	<label>Enter a URL:</label>
+	<input type="text" name="link">
+	<button type="sumbit">Shorten!</button>
+	<input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+</form>
+
+
+<ul>
+	<% @links.each do |link| %>
+	<li>
+		<a href="/<%= link.shortlink %>"><%= link.shortlink %></a>
+		<span> goes to: <%= link.link %></span>
+	</li>
+	<% end %>
+</ul>
+
+<br>
+<a href="/most_visited_pages">Most Visited Pages</a>
+
+<br>
+<a href="/url_list">List of links</a>

@@ -1,0 +1,9 @@
+<h1>Website List</h1>
+
+<ol>
+	<% @links.each do |link| %>
+	<li>
+		<p><%= link.link %> was created on <%= link.created_at %> and has been visited <%= link.count %> times.</p>
+	</li>
+	<% end %>
+</ol>

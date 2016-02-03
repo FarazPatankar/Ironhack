@@ -1,0 +1,10 @@
+<h1>Most Visited Pages</h1>
+
+<ul>
+	<% @links.each do |link| %>
+	<li>
+		<a href="/<%= link.shortlink %>"><%= link.shortlink %></a>
+		<span> goes to: <%= link.link %></span>
+	</li>
+	<% end %>
+</ul>
