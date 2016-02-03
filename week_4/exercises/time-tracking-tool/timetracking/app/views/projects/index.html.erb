@@ -1,6 +1,7 @@
 <ul>
 	<% @projects.each do |project| %>
 		<li>
+			<%= link_to(project.name, project_entries_path(project)) %>
 			<% if project.description.present? %>
 				<p><%= project.id.to_s + ":" + project.name + "--- " + project.description %></p>
 			<% else %>
