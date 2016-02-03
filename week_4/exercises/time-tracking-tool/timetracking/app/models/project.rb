@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+	has_many :entries
 	def self.clean_old
 		d = Date.current
 		d = d - 1.week
@@ -8,5 +9,23 @@ class Project < ActiveRecord::Base
 
 	def self.last_created_projects(number)
 		limit(number).order("created_at DESC")
+	end
+
+	def total_hours_in_month(month, year)
+		sum = 0
+		mins_sum = 0
+
+		month = Date.new(year, month)
+
+		entries
+		.where(date: month.beginning_of_month..month.end_of_month)
+		.each do |entry|
+			sum += entry.hours
+			mins_sum += entry.minutes
+		end
+
+		mins_to_hours = mins_sum/60
+
+		sum + mins_to_hours
 	end
 end
