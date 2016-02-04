@@ -5,7 +5,7 @@
 	<li>
 		<%= product.user.name %>
 		is selling the product:
-		<%= product.title %>
+<a href="/products/<%= product.id %>"><%= product.title %></a>
 	</li>
 	<% end %>
 </ul>

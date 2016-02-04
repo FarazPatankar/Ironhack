@@ -4,6 +4,9 @@ class ProductsController < ApplicationController
 	end
 
 	def show
+		id = params[:id]
+		@product = Product.find_by(id: id)
+		@bids = @product.bids.all
 	end
 
 	def create
