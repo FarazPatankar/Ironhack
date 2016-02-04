@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 	def show
 		id = params[:id]
 		@user = User.find_by(id: id)
-
 	end
 
 	def create
@@ -15,6 +14,9 @@ class UsersController < ApplicationController
 		user = User.create(name: name, email: email)
 
 		redirect_to("/users/#{user.id}")
+	end
+
+	def login
 	end
 
 	def destroy

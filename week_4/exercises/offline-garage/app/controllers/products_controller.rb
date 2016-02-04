@@ -10,8 +10,9 @@ class ProductsController < ApplicationController
 		title = params[:title]
 		description = params[:description]
 		deadline = params[:deadline]
-
-		product = Product.create(title: title, description: description, deadline: deadline)
+		id = params[:id]
+		user = User.find_by(id: id)
+		product = user.products.create(title: title, description: description, deadline: deadline)
 
 		redirect_to("/products")
 	end
@@ -20,5 +21,7 @@ class ProductsController < ApplicationController
 	end
 
 	def new
+		id = params[:id]
+		@user = User.find_by(id: id)
 	end
 end

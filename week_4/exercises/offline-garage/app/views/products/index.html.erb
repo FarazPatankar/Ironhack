@@ -3,6 +3,8 @@
 <ul>
 	<% @products.each do |product| %>
 	<li>
+		<%= product.user.name %>
+		is selling the product:
 		<%= product.title %>
 	</li>
 	<% end %>

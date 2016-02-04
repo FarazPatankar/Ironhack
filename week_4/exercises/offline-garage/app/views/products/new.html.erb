@@ -1,6 +1,6 @@
 <h1>Enter Product Details</h1>
 
-<form action="/create_product" method="POST">
+<form action="/users/<%= @user.id %>/products" method="POST">
 	<label>Title</label>
 	<input type="text" name="title">
 
