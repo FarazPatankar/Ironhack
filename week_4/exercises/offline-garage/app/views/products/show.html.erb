@@ -2,18 +2,26 @@
 <h2><%= @product.description %></h2>
 <p>The deadline is: <%= @product.deadline %></p>
 
-<form action="/products/<%= @product.id %>/bid" method="POST">
-	<label>Enter your email</label>
-	<input type="text" name="email">
+<% if @winner.present? %>
+	<ul>
+		<li>
+			This product has been sold to <% @winner.email %> with the winning bid of <%= @winner.amount %>
+		</li>
+	</ul>
+<% else %>
+	<form action="/products/<%= @product.id %>/bid" method="POST">
+		<label>Enter your email</label>
+		<input type="text" name="email">
 
-	<label>Enter bidding amount</label>
-	<input type="number" name="bid">
+		<label>Enter bidding amount</label>
+		<input type="number" name="bid">
 
-	<input type="hidden" name="authenticity_token"
-      value="<%= form_authenticity_token %>">
+		<input type="hidden" name="authenticity_token"
+	      value="<%= form_authenticity_token %>">
 
-	<button type="submit">Submit</button>
-</form>
+		<button type="submit">Submit</button>
+	</form>
+<% end %>
 
 <% if @bids.any? %>
 	<ul>
@@ -24,3 +32,5 @@
 		<% end %>
 	</ul>
 <% end %>
+
+
