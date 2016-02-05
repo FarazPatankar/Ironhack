@@ -1,0 +1,9 @@
+<form action="/concerts/results" method="POST">
+	<label>Enter maximum price</label>
+	<input type="integer" name="price">
+
+  	<input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+
+	<button type="submit">Submit</button>
+</form>

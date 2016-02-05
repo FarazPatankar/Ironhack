@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  resources(:concerts, only: [:new, :create, :show, :index])
+  get "/concerts/search" => "concerts#search"
+  get "/concerts/popular" => "concerts#popular"
+  post "/concerts/results" => "concerts#results"
+
+  resources(:concerts, only: [:new, :create, :show, :index]) do
+    resources(:comments, only: [:new, :create])
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

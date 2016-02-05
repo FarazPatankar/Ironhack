@@ -1,9 +1,36 @@
 <h1>Welcome to the Ironhack Music Network</h1>
-<ul>
-	<% @concerts.each do |concert| %>
-	<li>
-		<%= link_to("#{concert.artist} at #{concert.venue} in #{concert.city}", concert_path(concert)) %>
-	</li>
-	<% end %>
-</ul>
-<%= link_to("Add a new concert", new_concert_path) %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-9">
+			<ul>
+				<% @concerts_today.each do |concert| %>
+				<li>
+					<%= link_to("#{concert.artist} at #{concert.venue} in #{concert.city}", concert_path(concert)) %>
+				</li>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="col-sm-3 right-side">
+			<ul>
+				<% @concerts_this_month.each do |concert| %>
+				<li>
+					<%= link_to("#{concert.artist} at #{concert.venue} in #{concert.city}", concert_path(concert)) %>
+				</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<%= link_to("Search for Concert", "/concerts/search", :class => "btn btn-primary") %>
+
+<br>
+<br>
+
+<%= link_to("Popular Concerts", "/concerts/popular", :class => "btn btn-primary") %>
+
+<br>
+<br>
+
+<%= link_to("Add a new concert", new_concert_path, :class => "btn btn-primary") %>

@@ -1,6 +1,6 @@
 <h1>Add a new concert</h1>
 
-<%= form_for [@concert] do |f| %>
+<%= form_for [@concert], html: { multipart: true } do |f| %>
 	<%= f.label :artist %>
 	<%= f.text_field :artist %>
 
@@ -12,7 +12,7 @@
 	<br>
 
 	<%= f.label :city %>
-	<%= f.text_field :city %>
+	<%= f.select :city, ["Miami", "New York City", "San Francisco", "Paris", "Buenos Aires", "Mumbai", "Barcelona", "Madrid"] %>
 
 	<br>
 
@@ -30,6 +30,9 @@
 	<%= f.text_area :description %>
 
 	<br>
+
+	<%= f.label :image %>
+	<%= f.file_field :poster %>
 
 	<%= f.submit 'Save' %>
 <%end%>

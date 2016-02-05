@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160205161310) do
+ActiveRecord::Schema.define(version: 20160205224019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "text"
+    t.integer  "concert_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["concert_id"], name: "index_comments_on_concert_id", using: :btree
 
   create_table "concerts", force: :cascade do |t|
     t.string   "artist"
@@ -23,8 +32,13 @@ ActiveRecord::Schema.define(version: 20160205161310) do
     t.datetime "date"
     t.decimal  "price"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "poster_file_name"
+    t.string   "poster_content_type"
+    t.integer  "poster_file_size"
+    t.datetime "poster_updated_at"
   end
 
+  add_foreign_key "comments", "concerts"
 end

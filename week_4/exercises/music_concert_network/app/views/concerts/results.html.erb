@@ -1,0 +1,13 @@
+<h2>List of concerts under <%= @price %></h2>
+
+<ul>
+	<% @concerts.each do |concert| %>
+	<li>
+		<%= link_to("#{concert.artist} at #{concert.venue} in #{concert.city}", concert_path(concert)) %>
+	</li>
+	<% end %>
+</ul>
+
+<br>
+
+<a href="/concerts">Back to Home</a>

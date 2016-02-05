@@ -1,21 +1,56 @@
 <h2>Artist: <%= @concert.artist %></h2>
 
 <h3>Details: </h3>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<ul>
+				<li>
+					<%= image_tag @concert.poster.url(:thumb) %>
+				</li>
+				<li>
+					Venue: <%= @concert.venue %>
+				</li>
+				<li>
+					City: <%= @concert.city %>
+				</li>
+				<li>
+					Date: <%= @concert.date %>
+				</li>
+				<li>
+					Price: <%= @concert.price %>
+				</li>
+				<li>
+					Description: <%= @concert.description %>
+				</li>
+			</ul>
+		</div>
 
-<ul>
-	<li>
-		Venue: <%= @concert.venue %>
-	</li>
-	<li>
-		City: <%= @concert.city %>
-	</li>
-	<li>
-		Date: <%= @concert.date %>
-	</li>
-	<li>
-		Price: <%= @concert.price %>
-	</li>
-	<li>
-		Description: <%= @concert.description %>
-	</li>
-</ul>
+		<div class="col-sm-12 comment-box">
+			<div>
+				<h3>Comments</h3>
+				<ul>
+					<% @comments.each do |comment| %>
+					<li>
+						<%= comment.text %>
+					</li>
+					<% end %>
+				</ul>
+			</div>
+
+			<div>
+				<%= form_for [@concert, @comment] do |f| %>
+					<%= f.label :comment %>
+					<%= f.text_area :text %>
+
+					<br>
+					<%= f.submit 'Add Comment' %>
+				<%end%>
+			</div>
+			<br>
+			<div>
+				<%= link_to("Back To Home", concerts_path, :class => "btn btn-primary") %>
+			</div>
+		</div>
+	</div>
+</div>
