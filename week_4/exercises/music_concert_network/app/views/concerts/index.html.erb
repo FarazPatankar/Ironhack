@@ -1,0 +1,9 @@
+<h1>Welcome to the Ironhack Music Network</h1>
+<ul>
+	<% @concerts.each do |concert| %>
+	<li>
+		<%= link_to("#{concert.artist} at #{concert.venue} in #{concert.city}", concert_path(concert)) %>
+	</li>
+	<% end %>
+</ul>
+<%= link_to("Add a new concert", new_concert_path) %>
