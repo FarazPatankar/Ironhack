@@ -1,19 +1,29 @@
+require 'uri'
+
 class LinksController < ApplicationController
 	def index
 		@links = Link.all
 	end
 
 	def shortlink
+		# Check if link is valid
+		# Create shortlink after checking
+		# Check if already exists otherwise create
 		@link = params[:link]
-		@shortlink = [*("a".."z"),*("A".."Z")].sample(3).join
+		@link = Link.check_url(@link)
 
-		url = Link.find_by(link: @link)
+		if @link =~ /\A#{URI::regexp}\z/
+			@shortlink = [*("a".."z"),*("A".."Z")].sample(3).join
+			url = Link.find_by(link: @link)
 
-		if url
-			redirect_to("/")
+			if url
+				redirect_to("/")
+			else
+				Link.create(link: @link, shortlink: @shortlink, count: 0)
+				redirect_to("/")
+			end
 		else
-			Link.create(link: @link, shortlink: @shortlink, count: 0)
-			redirect_to("/")
+			render(:text => "Please enter a valid uri")
 		end
 	end
 
