@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get "/" => "concerts#home"
   get "/concerts/search" => "concerts#search"
   get "/concerts/popular" => "concerts#popular"
   post "/concerts/results" => "concerts#results"

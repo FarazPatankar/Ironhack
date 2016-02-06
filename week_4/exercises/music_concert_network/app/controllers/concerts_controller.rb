@@ -36,7 +36,9 @@ class ConcertsController < ApplicationController
 		@sorted_concerts = @concerts.sort_by do |concert|
 			-concert.comments.count
 		end
+	end
 
+	def home
 	end
 
 	private
