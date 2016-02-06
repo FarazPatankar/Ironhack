@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get "/users/new" => "users#new"
 
-  get "users/login" => "users#login"
+  post "users/login" => "users#login"
 
   post "/create" => "users#create"
 

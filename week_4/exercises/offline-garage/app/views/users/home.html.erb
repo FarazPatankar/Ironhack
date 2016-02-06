@@ -1,4 +1,18 @@
 <h1>Welcome to the OFFLINE GARAGE SALE</h1>
 
+
+<form action="/users/login" method="POST">
+	<label>Enter your email</label>
+	<input type="text" name="email">
+
+	<label>Enter your password</label>
+	<input type="password" name="password">
+
+	<input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+	<button type="submit">Log In</button>
+</form>
+
+
+<br>
 <a href="/users/new">Create account</a>
-<a href="/users/login">Login</a>
