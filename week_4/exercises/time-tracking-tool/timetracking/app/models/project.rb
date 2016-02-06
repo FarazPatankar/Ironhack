@@ -5,6 +5,8 @@ class Project < ActiveRecord::Base
 	validates :name, format: {with: /(\w\s)+/}
 
 	has_many :entries
+	has_many :participations
+	has_many :people, through: :participations
 
 	def self.clean_old
 		d = Date.current

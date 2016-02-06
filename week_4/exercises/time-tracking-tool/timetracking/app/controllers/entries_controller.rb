@@ -23,8 +23,10 @@ class EntriesController < ApplicationController
 		@entry = @project.entries.new entry_params
 
 		if @entry.save
+			flash[:notice] = "Entry Created!"
 			redirect_to action: "index", controller: "entries", project_id: @project.id
 		else
+			flash[:alert] = "Unable to create entry!"
 			render 'new'
 		end
 	end

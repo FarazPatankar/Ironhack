@@ -1,33 +1,5 @@
-<% if @entry.errors.any? %>
-	<ul>
-		<% @entry.errors.full_messages.each do |message| %>
-		<li>
-			<%= message %>
-		</li>
-		<% end %>
-	</ul>
-<% end %>
+<%= flash_message %>
 
-
-
-
-<%= form_for [@project, @entry] do |f| %>
-	<%= f.label :hours %>
-	<%= f.text_field :hours %>
-
-	<br>
-
-	<%= f.label :minutes %>
-	<%= f.text_field :minutes %>
-
-	<br>
-
-	<%= f.label :date %>
-	<%= f.date_field :date %>
-
-	<br>
-
-	<%= f.submit 'Save' %>
-<%end%>
+<%= render 'form' %>
 
 <%= link_to("Cancel", project_entries_path(@project)) %>
