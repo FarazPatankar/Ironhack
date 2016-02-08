@@ -24,3 +24,26 @@
 .comment-box {
 	background-color: #aaa;
 }
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -75px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 75px;
+}
+
+.site-footer {
+	text-align: center;
+}
