@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </head>
+  <body class="whole-body">
+    <div class="container" style="margin-top: 50px;">
+      <button class="btn btn-primary hello-button">Do Something</button>
+    </div>
+
+    <p>No.</p>
+
+    <p class="js-pizza">I like pizza.</p>
+    <h1 id="title">jQuery Exercises</h1>
+    <button class="js-tacos">Tacos</button>
+    <button data-action="do stuff">Do Stuff</button>
+
+    <button class="btn btn-danger">Pizza</button>
+
+    <div class="js-append" style="background-color: red">
+      Testing
+    </div>
+
+    <button class="fade-stuff">Fade Stuff</button>
+
+    <button class="unicorn-mode">Unicorn Mode</button>
+    <script src="app.js"></script>
+
+    <script type="text/javascript">
+      $('.hello-button').on('click', function () {
+        alert('hello world')
+      })
+    </script>
+  </body>
+</html>
