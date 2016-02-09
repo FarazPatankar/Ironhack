@@ -5,7 +5,7 @@ var phrases = [
 ]
 
 
-phrase = phrases[Math.floor(Math.random()*phrases.length)];
+var phrase = phrases[Math.floor(Math.random()*phrases.length)];
 $(".phrase").append(`<p>${phrase}</p>`);
 
 
@@ -23,11 +23,25 @@ $("#target").on("submit", function (event) {
 $(".link").on("click", function() {
 	if ($(".link").hasClass("hide-phrase") == true) {
 		for(var i = 0; i < phrases.length; i++) {
-			$(".link").after(`<div class="phrase-element"><span>${phrases[i]}</span> <button class="glyphicon glyphicon-remove-circle remove-btn"></button></div>`);
+			if(phrases[i] == phrase) {
+				$(".link").after(`<div class="phrase-element"><span class="actual-phrase-${i}" style="color: red;">${phrases[i]}</span><button class="glyphicon glyphicon-remove-circle remove-btn"></button></div>`);
+			}
+			else {
+				$(".link").after(`<div class="phrase-element"><span class="actual-phrase-$">${phrases[i]}</span><button class="glyphicon glyphicon-remove-circle remove-btn"></button></div>`);
+			}
 			$(".link").removeClass("hide-phrase");
 		}
 
 	$(".phrase-element").on("click", function() {
+		var value = $(this).text();
+		console.log(value);
+		for(var j = 0; j < phrases.length; j++) {
+			console.log(phrases[j]);
+			if(phrases[j] == value) {
+				phrases.splice(j, 1);
+			}
+		}
+
 		$(this).remove();
 	})
 
