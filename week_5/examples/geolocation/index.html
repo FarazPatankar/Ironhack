@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="jquery-2.2.0.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js"
+         async defer></script>
+	<script src="app.js"></script>
+
+	<style>
+      #map {
+        width: 500px;
+        height: 500px;
+        margin: 0 auto;
+      }
+    </style>
+</head>
+<body>
+	<h1>Your Current Position</h1>
+
+	<dl>
+		<dt>Latitude:</dt>
+		<dd class="js-lat-value">Calculating...</dd>
+
+		<dt>Longitude:</dt>
+		<dd class="js-long-value">Calculating...</dd>
+	</dl>
+
+	<h1>This is where you are:</h1>
+	<div id="map">
+	</div>
+</body>
+</html>
