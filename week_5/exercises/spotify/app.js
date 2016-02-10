@@ -44,6 +44,7 @@ function displayTracks(albumId) {
 }
 
 function listTracks(tracks) {
+  $(".js-track-list").empty();
   tracks.forEach(function(track) {
     var html = `
       <li>
@@ -69,7 +70,7 @@ function displayAlbums(artistId) {
 }
 
 function listAlbums(albums) {
-  console.log(albums);
+  $(".js-album-list").empty();
   albums.forEach(function(album) {
     var html = `
       <li class="js-album-name" data-id="${album.id}" data-img="${album.images[1].url}">
@@ -109,12 +110,12 @@ function searchArtist() {
 }
 
 function displayResults(artists) {
-      $(".js-artist-list").empty();
+  $(".js-artist-list").empty();
   artists.forEach(function(artist) {
     var html = `
         <li>
-          <h3 data-id="${artist.id}" class="js-artist-name"><a href="#">${artist.name}</a></h3>
-          <img src=${artist.images[2].url}>
+          <h3 data-id="${artist.id}" class="js-artist-name artist-name"><a href="#">${artist.name}</a></h3>
+          <img class="artist-img"src=${artist.images[2].url}>
         </li>
     `;
       $(".js-artist-list").append(html);
