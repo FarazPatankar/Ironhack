@@ -1,0 +1,25 @@
+.main-heading {
+	color: #111;
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 100px;
+	font-weight: bold;
+	line-height: 1;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.input-form {
+	text-align: center;
+	font-size: 25px;
+	margin-bottom: 50px;
+}
+
+.artist-list {
+	text-align: center;
+	padding-left: 0px;
+}
+
+.artist-list li{
+	list-style: none;
+	margin-bottom: 50px;
+}

@@ -16,7 +16,16 @@ $(document).on("ready", function() {
     $(".js-album-img").prop("src", albumImg);
     displayTracks(albumId);
     $("#albumModal").modal("hide");
-    $("#tracksModal").modal("show");
+    setTimeout(function() {
+      $("#tracksModal").modal("show");
+    }, 500);
+  })
+
+  $(".js-back-to-modal").on("click", function() {
+    $("#tracksModal").modal("hide");
+    setTimeout(function() {
+      $("#albumModal").modal("show");
+    }, 500);
   })
 })
 
@@ -64,7 +73,10 @@ function listAlbums(albums) {
   albums.forEach(function(album) {
     var html = `
       <li class="js-album-name" data-id="${album.id}" data-img="${album.images[1].url}">
+        <img src="${album.images[1].url}">
         <a href="#">${album.name}</a>
+        <br>
+        <br>
       </li>
     `;
 
@@ -97,6 +109,7 @@ function searchArtist() {
 }
 
 function displayResults(artists) {
+      $(".js-artist-list").empty();
   artists.forEach(function(artist) {
     var html = `
         <li>
@@ -104,7 +117,6 @@ function displayResults(artists) {
           <img src=${artist.images[2].url}>
         </li>
     `;
-
       $(".js-artist-list").append(html);
   })
 }

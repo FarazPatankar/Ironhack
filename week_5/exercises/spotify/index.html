@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<title>Spotify Artist Search</title>
+	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script src="jquery-2.2.0.js"></script>
 	<script src="app.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="bootstrap.js"></script>
 </head>
 <body>
+	<div class="whole-site">
 	<div>
-		<form>
-			<label>Artist Name</label>
+		<h1 class="main-heading">Spotify Artist Search</h1>
+		<form class="input-form">
+			<label class="input-label">Artist Name</label>
+			<br>
 			<input class="js-artist">
-
+			<br>
 			<br>
 			<button class="js-submit" type="submit">Search</button>
 		</form>
 	</div>
 
 	<div>
-		<ul class="js-artist-list">
+		<ul class="js-artist-list artist-list">
 		</ul>
 	</div>
 
@@ -38,9 +42,9 @@
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	      </div>
-	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+	    </div>
+	  </div>
+	</div>
 
 	<div id="tracksModal" class="modal fade" tabindex="-1" role="dialog">
 	  <div class="modal-dialog">
@@ -48,18 +52,19 @@
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	        <h4 class="modal-title">Track List</h4>
-	        <img src="" class="js-album-img">
+	        <button class="js-back-to-modal">Back to Albums</button>
 	      </div>
 	      <div class="modal-body">
+	        <img src="" class="js-album-img">
 	        <ul class="js-track-list">
-
 	        </ul>
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 	      </div>
-	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+	    </div>
+	  </div>
+	</div>
+	</div>
 </body>
 </html>
