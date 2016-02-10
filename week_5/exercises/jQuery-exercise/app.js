@@ -34,9 +34,7 @@ $(".link").on("click", function() {
 
 	$(".phrase-element").on("click", function() {
 		var value = $(this).text();
-		console.log(value);
 		for(var j = 0; j < phrases.length; j++) {
-			console.log(phrases[j]);
 			if(phrases[j] == value) {
 				phrases.splice(j, 1);
 			}
