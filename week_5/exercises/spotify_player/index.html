@@ -8,6 +8,17 @@
 	<script src="js/app.js"></script>
 </head>
 <body>
+	<!-- Begin Search Form HTML -->
+	<form class="search-form">
+		<label>What song would you like to listen to?</label>
+		<br>
+		<input class="js-track-name" type="text" placeholder="Enter track name">
+		<br>
+		<br>
+		<button class="js-listen-btn">Listen!</button>
+	</form>
+	<!-- End Search Form HTML -->
+
 	<div class="widget">
 		<div class="header">
 			<!-- Try adding/removing these classes: -->
@@ -32,16 +43,11 @@
 		<audio src="" class="js-player"></audio>
 	</div>
 
+	<div class="js-more">
 
-	<!-- Begin Search Form HTML -->
-	<form>
-		<label>What song would you like to listen to?</label>
-		<br>
-		<input class="js-track-name" type="text" placeholder="Enter track name">
-		<br>
-		<button class="js-listen-btn">Listen!</button>
-	</form>
-	<!-- End Search Form HTML -->
+	</div>
+
+
 
 	<!-- Begin Artist Modal -->
 	<div class="modal fade js-modal">
@@ -62,5 +68,25 @@
 	  </div>
 	</div>
 	<!-- End Artist Modal -->
+
+	<!-- Begin List All Tracks HTML -->
+	<div class="modal fade js-tracks-modal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+
+	      <div class="modal-header">
+	        <h2>Results:</h2>
+	      </div>
+
+	      <div class="modal-body">
+	      	<ul class="js-track-list">
+
+	      	</ul>
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+	<!-- End List All Tracks HTML -->
 </body>
 </html>

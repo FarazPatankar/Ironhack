@@ -153,3 +153,12 @@ progress::-webkit-progress-value {
 progress::-moz-progress-bar {
   background-color: #45a800;
 }
+
+.js-more {
+  text-align: center;
+  margin: 10px;
+}
+
+.search-form {
+  text-align: center;
+}

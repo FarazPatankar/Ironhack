@@ -24,9 +24,40 @@ $(document).on("ready", function() {
 
 		setArtistInfo(id);
 	})
+
+	$(".js-track-list").on("click", ".js-next-track", function() {
+		var id = $(this).data("id");
+		console.log("hey", id);
+		$(".js-tracks-modal").modal("hide");
+		setNextTrack(id);
+	})
 })
 
 //-------------------------------------------------
+
+function setNextTrack(id) {
+	$.ajax({
+		url: `https://api.spotify.com/v1/tracks/${id}`,
+		success: function(response) {
+			var firstTrack = response;
+
+			var songTitle = firstTrack.name;
+			var artistName = firstTrack.artists[0].name;
+			var coverImg = firstTrack.album.images[0].url;
+			var trackPreview = firstTrack.preview_url;
+			var artistId = firstTrack.artists[0].id
+
+			$(".js-title").text(songTitle);
+			$(".js-artist").text(artistName);
+			$(".js-artist").data("id", artistId)
+			$(".js-album-art").prop("src", coverImg);
+			$(".js-player").prop("src", trackPreview);
+		},
+		error: function() {
+			console.log("setNextTrack is broken")
+		}
+	})
+}
 
 function setArtistInfo(id) {
 	$(".js-artist-name").empty();
@@ -63,11 +94,11 @@ function printTime() {
 }
 
 function getTracks(trackName) {
+	$(".js-more").empty();
 	$.ajax({
 		url: `https://api.spotify.com/v1/search?q=${trackName}&type=track`,
 		success: function(response) {
 			var firstTrack = response.tracks.items[0];
-			console.log("track", firstTrack);
 
 			var songTitle = firstTrack.name;
 			var artistName = firstTrack.artists[0].name;
@@ -82,13 +113,35 @@ function getTracks(trackName) {
 			$(".js-player").prop("src", trackPreview);
 
 			var html = `
-				<button class="js-more-tracks">See more tracks</button>
+				<button class="js-more-tracks">See more results</button>
 			`;
-			$(".js-widget").append(html);
+			$(".js-more").append(html);
+
+			//Begin writing code to list all tracks
+			var allTracks = response.tracks.items;
+
+			$(".js-more-tracks").on("click", function() {
+				listAllTracks(allTracks);
+			})
+			//Stop writing code to list all tracks
 
 		},
 		error: function() {
 			console.log("Error");
 		}
 	})
+}
+
+function listAllTracks(tracks) {
+	$(".js-track-list").empty();
+	tracks.forEach(function(track) {
+		var html = `
+			<li>
+				<a href="#" data-id="${track.id}" class="js-next-track">${track.name}</a>
+			</li>
+		`;
+
+		$(".js-track-list").append(html);
+	})
+	$(".js-tracks-modal").modal("show");
 }
