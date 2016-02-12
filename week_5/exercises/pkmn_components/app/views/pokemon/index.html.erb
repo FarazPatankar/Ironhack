@@ -1,0 +1,95 @@
+<h1>Pokédex</h1>
+
+<!-- List of pokemon -->
+<ul class="pokedex-list">
+  <% @pokemon.each do |pkmn| %>
+    <li>
+      <button class="js-show-pokemon btn btn-link"
+          data-pokemon-uri="<%= pkmn["resource_uri"] %>">
+        <%= pkmn["name"] %>
+      </button>
+    </li>
+  <% end %>
+</ul>
+
+
+<!-- Pokemon modal view (hidden at first) -->
+<div class="modal fade js-pokemon-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+
+        <h3 class="modal-title pkmn-header">
+          <span class="js-pkmn-name">Feraligtr</span>
+          <small class="js-pkmn-number">#160</small>
+        </h3>
+        <img class="pkmn-img js-pkmn-img" src="">
+        <p>Description: </p>
+        <p class="js-pkmn-description"></p>
+
+        <button class="js-evolution-btn" data-id="" data-info="">Show Evolution</button>
+      </div><!-- .modal-header -->
+
+      <div class="modal-body">
+        <dl class="dl-horizontal">
+          <dt>Height</dt>
+          <dd class="js-pkmn-height">23</dd>
+
+          <dt>Weight</dt>
+          <dd class="js-pkmn-weight">888</dd>
+        </dl>
+
+        <dl class="dl-horizontal">
+          <dt>HP</dt>
+          <dd class="js-pkmn-hp"></dd>
+
+          <dt>Attack</dt>
+          <dd class="js-pkmn-atk"></dd>
+
+          <dt>Defense</dt>
+          <dd class="js-pkmn-def"></dd>
+
+          <dt>Special Attack</dt>
+          <dd class="js-pkmn-sp-atk"></dd>
+
+          <dt>Special Defense</dt>
+          <dd class="js-pkmn-sp-def"></dd>
+
+          <dt>Speed</dt>
+          <dd class="js-pkmn-spd"></dd>
+
+          <dt>Type</dt>
+          <dd class="js-pkmn-type"></dd>
+        </dl>
+      </div><!-- .modal-body -->
+
+    </div><!-- .modal-content -->
+  </div><!-- .modal-dialog -->
+</div><!-- .modal -->
+
+<!-- Pokemon modal view (hidden at first) -->
+<div class="modal fade js-evolution-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+
+        <h3 class="modal-title js-evolution-header">
+        </h3>
+      </div><!-- .modal-header -->
+
+      <div class="modal-body">
+        <ul class="js-possible-evolutions">
+        </ul>
+      </div><!-- .modal-body -->
+
+    </div><!-- .modal-content -->
+  </div><!-- .modal-dialog -->
+</div><!-- .modal -->
