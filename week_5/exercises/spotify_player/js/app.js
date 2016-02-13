@@ -27,13 +27,45 @@ $(document).on("ready", function() {
 
 	$(".js-track-list").on("click", ".js-next-track", function() {
 		var id = $(this).data("id");
-		console.log("hey", id);
 		$(".js-tracks-modal").modal("hide");
 		setNextTrack(id);
+	})
+
+	$(".js-artist-albums").on("click", function() {
+		var id = $(this).data("id");
+		$(".js-modal").modal("hide");
+		listArtistAlbums(id);
 	})
 })
 
 //-------------------------------------------------
+
+function listArtistAlbums(id) {
+	$(".js-album-list").empty();
+	$.ajax({
+		url: `https://api.spotify.com/v1/artists/${id}/albums`,
+		success: function(response) {
+			var albums = response.items
+
+			albums.forEach(function(album) {
+				var html = `
+					<li>
+					<span>${album.name}</span>
+					<img class="img-responsive" src="${album.images[0].url}">
+					</li>
+				`;
+
+				$(".js-album-list").append(html);
+			})
+			setTimeout(function() {
+			    $(".js-albums-modal").modal("show");
+			}, 500);
+		},
+		error: function() {
+			console.log("listArtistAlbums is broken")
+		}
+	})
+}
 
 function setNextTrack(id) {
 	$.ajax({
@@ -68,17 +100,18 @@ function setArtistInfo(id) {
 	$.ajax({
 		url: "https://api.spotify.com/v1/artists/" + id,
 		success: function(response) {
-			console.log(response);
 
 			var artistName = response.name;
 			var artistImg = response.images[0].url;
 			var artistFollowers = response.followers.total;
 			var artistPopularity = response.popularity;
-			console.log(artistName)
 			$(".js-artist-name").text(artistName);
 			$(".js-artist-img").prop("src", artistImg);
 			$(".js-artist-followers").text("Followers: " + artistFollowers);
 			$(".js-artist-popularity").text("Popularity: " + artistPopularity);
+			$(".js-artist-albums").text("See " + artistName + "'s albums");
+			$(".js-artist-albums").data("id", response.id)
+
 			$('.js-modal').modal("show");
 
 		},
@@ -133,11 +166,13 @@ function getTracks(trackName) {
 }
 
 function listAllTracks(tracks) {
+	console.log(tracks);
 	$(".js-track-list").empty();
 	tracks.forEach(function(track) {
 		var html = `
 			<li>
 				<a href="#" data-id="${track.id}" class="js-next-track">${track.name}</a>
+				<img class="img-responsive" src="${track.album.images[0].url}">
 			</li>
 		`;
 
