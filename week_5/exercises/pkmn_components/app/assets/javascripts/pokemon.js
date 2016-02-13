@@ -69,10 +69,10 @@ PokemonApp.Pokemon.prototype.render = function() {
 			self.setDescriptionForPkmn(description_uri);
 
 			var pkmnId = self.info.name
-			$(".js-evolution-btn").attr("data-id", pkmnId);
+			$(".js-evolution-btn").data("id", pkmnId);
 
 			var evolutionInfo = JSON.stringify(self.info.evolutions)
-			$(".js-evolution-btn").attr("data-info", evolutionInfo)
+			$(".js-evolution-btn").data("info", evolutionInfo)
 
 
 			$(".js-pokemon-modal").modal("show");
@@ -98,6 +98,8 @@ PokemonApp.PokemonEvolutions.prototype.render = function() {
 
 	var identity = this.id
 	var information = this.info
+	var information = JSON.parse(information);
+	console.log("info-", typeof information)
 
 	if (information.length > 0) {
 		information.forEach(function(info) {
