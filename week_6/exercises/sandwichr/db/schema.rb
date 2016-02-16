@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215170404) do
+ActiveRecord::Schema.define(version: 20160216214235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +23,43 @@ ActiveRecord::Schema.define(version: 20160215170404) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sandwich_ingredients", force: :cascade do |t|
+    t.integer  "sandwich_id"
+    t.integer  "ingredient_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "sandwich_ingredients", ["ingredient_id"], name: "index_sandwich_ingredients_on_ingredient_id", using: :btree
+  add_index "sandwich_ingredients", ["sandwich_id"], name: "index_sandwich_ingredients_on_sandwich_id", using: :btree
+
   create_table "sandwiches", force: :cascade do |t|
     t.string   "name"
     t.string   "bread_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.decimal  "total_calories", default: 0.0
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  add_foreign_key "sandwich_ingredients", "ingredients"
+  add_foreign_key "sandwich_ingredients", "sandwiches"
 end

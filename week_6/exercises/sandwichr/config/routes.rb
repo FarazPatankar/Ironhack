@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
+  get "/" => "sandwich_views#home"
+  devise_for :users
   resources :ingredients, except: [:new, :edit]
-  resources :sandwiches, except: [:new, :edit]
+  resources :sandwiches, except: [:new, :edit], controller: "sandwich_views"
+
+  scope "/api" do
+    resources :sandwiches do
+      resources :ingredients
+    end
+    post "/sandwiches/:id/ingredients/add" => "sandwiches#add_ingredient"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
