@@ -1,4 +1,23 @@
 <h1>Welcome to the Ironhack Music Network</h1>
+
+<% if user_signed_in? %>
+
+	<%= link_to("Log Out", destroy_user_session_path, :class => "btn btn-danger", :method => "delete") %>
+
+<% else %>
+
+	<%= link_to("Sign Up", new_user_registration_path, :class => "btn btn-primary") %>
+
+	<br>
+	<br>
+
+	<%= link_to("Log In", new_user_session_path, :class => "btn btn-primary") %>
+
+<% end %>
+
+<br>
+<br>
+
 <div class="container">
 	<div class="row">
 		<div class="col-sm-9">

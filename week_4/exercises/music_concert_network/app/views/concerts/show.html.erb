@@ -26,6 +26,7 @@
 			</ul>
 		</div>
 
+
 		<div class="col-sm-12 comment-box">
 			<div>
 				<h3>Comments</h3>
@@ -38,19 +39,33 @@
 				</ul>
 			</div>
 
-			<div>
-				<%= form_for [@concert, @comment] do |f| %>
-					<%= f.label :comment %>
-					<%= f.text_area :text %>
+			<% if user_signed_in? %>
 
-					<br>
-					<%= f.submit 'Add Comment' %>
-				<%end%>
-			</div>
-			<br>
-			<div>
-				<%= link_to("Back To Home", concerts_path, :class => "btn btn-primary") %>
-			</div>
+				<div>
+					<%= form_for [@concert, @comment] do |f| %>
+						<%= f.label :comment %>
+						<%= f.text_area :text %>
+
+						<br>
+						<%= f.submit 'Add Comment' %>
+					<%end%>
+				</div>
+				<br>
+
+			<% else %>
+
+				<div>
+					<p>Log In or Sign Up to add comments</p>
+					<%= link_to("Sign Up", new_user_registration_path, :class => "btn btn-primary") %>
+					<%= link_to("Log In", new_user_session_path, :class => "btn btn-primary") %>
+				</div>
+			<% end %>
+
+		</div>
+
+
+		<div>
+			<%= link_to("Back To Home", concerts_path, :class => "btn btn-primary") %>
 		</div>
 	</div>
 </div>

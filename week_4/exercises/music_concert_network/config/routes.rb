@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get "/" => "concerts#home"
   get "/concerts/search" => "concerts#search"
   get "/concerts/popular" => "concerts#popular"

@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+	before_action :authenticate_user!, only: [ :create ]
 
 	def create
 		@concert = Concert.find_by(id: params[:concert_id])
