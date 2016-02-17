@@ -1,36 +1,29 @@
-<h1><%= @product.title %></h1>
-<h2><%= @product.description %></h2>
-<p>The deadline is: <%= @product.deadline %></p>
 
-<% if @winner.present? %>
+<% if user_signed_in? %>
+	<h1><%= @product.title %></h1>
+	<h2><%= @product.description %></h2>
+	<p>The deadline is: <%= @product.deadline %></p>
+
 	<ul>
+		<% @product.reviews.each do |review| %>
 		<li>
-			This product has been sold to <% @winner.email %> with the winning bid of <%= @winner.amount %>
-		</li>
-	</ul>
-<% else %>
-	<form action="/products/<%= @product.id %>/bid" method="POST">
-		<label>Enter your email</label>
-		<input type="text" name="email">
-
-		<label>Enter bidding amount</label>
-		<input type="number" name="bid">
-
-		<input type="hidden" name="authenticity_token"
-	      value="<%= form_authenticity_token %>">
-
-		<button type="submit">Submit</button>
-	</form>
-<% end %>
-
-<% if @bids.any? %>
-	<ul>
-		<% @bids.each do |bid| %>
-		<li>
-			<%= bid.amount %> by <%= bid.email %>
+			<%= review.description %>
 		</li>
 		<% end %>
 	</ul>
+
+
+<% else %>
+	<p>Log in or Sign up to review our products</p>
 <% end %>
 
 
+<%= form_for @review, :url => { :controller => "reviews", :action => "create" } do |f| %>
+	<%= f.label :description %>
+  	<br>
+ 	<%= f.text_area :description %>
+  	<br>
+
+  	<%= f.submit "Submit" %>
+
+<% end %>

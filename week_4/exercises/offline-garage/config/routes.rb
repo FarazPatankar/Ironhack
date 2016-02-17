@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
+
+  post "products/:id/create" => "reviews#create"
+
   get "/" => "users#home"
 
   get "/users/new" => "users#new"

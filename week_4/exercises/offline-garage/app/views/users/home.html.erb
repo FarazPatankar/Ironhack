@@ -1,18 +1,7 @@
 <h1>Welcome to the OFFLINE GARAGE SALE</h1>
 
-
-<form action="/users/login" method="POST">
-	<label>Enter your email</label>
-	<input type="text" name="email">
-
-	<label>Enter your password</label>
-	<input type="password" name="password">
-
-	<input type="hidden" name="authenticity_token"
-      value="<%= form_authenticity_token %>">
-	<button type="submit">Log In</button>
-</form>
-
-
-<br>
-<a href="/users/new">Create account</a>
+<% if user_signed_in? %>
+	<%= link_to("View Products", products_path) %>
+<% else %>
+	<p>Log in or Sign up to view our products</p>
+<% end %>

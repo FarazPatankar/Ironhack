@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+apple = Product.create(title: "Apple", description: "Iz red", deadline: DateTime.new(2015, 2, 20), minimum_bid: 5)
+
+mat = User.create(name: "Mat", email: "mat@mat.com", password: "swordfish", password_confirmation: "swordfish")

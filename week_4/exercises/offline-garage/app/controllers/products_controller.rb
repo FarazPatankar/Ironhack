@@ -6,16 +6,8 @@ class ProductsController < ApplicationController
 	def show
 		id = params[:id]
 		@product = Product.find_by(id: id)
-		@bids = @product.bids.all
+		@review = @product.reviews.new
 
-		if @product.deadline < Time.now
-			@winner = @bids.order("amount DESC").first
-			if @winner.present?
-				render("products/show")
-			else
-				render(:text => "The deadline has expired and no bids were received.")
-			end
-		end
 	end
 
 	def create
