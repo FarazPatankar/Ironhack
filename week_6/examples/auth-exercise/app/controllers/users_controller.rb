@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authorize_user, only: [:show]
+  before_action :admin_only, only: [:index]
 
   # renders the home page
 def home
