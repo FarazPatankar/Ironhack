@@ -1,0 +1,5 @@
+# Install
+
+```
+rake db:setup
+```
