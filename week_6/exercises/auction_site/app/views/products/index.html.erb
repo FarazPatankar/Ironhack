@@ -1,0 +1,12 @@
+<ul>
+	<% @products.each do |product| %>
+	<li>
+		<%=link_to(product.title, product_path(product))%>
+		<% if current_user.id == product.user_id %>
+			<%=link_to("(Delete Product)", product_path(product), :method => :delete) %>
+		<% end %>
+	</li>
+	<% end %>
+</ul>
+<br>
+<%= link_to 'Back', :back %>

@@ -1,0 +1,58 @@
+<h1><%=@product.title%></h1>
+
+<ul>
+	<li>Description: <%= @product.description %></li>
+	<li>Deadline: <%= @product.deadline %></li>
+	<li>Minimum bid: <%= @product.minimum_bid %></li>
+</ul>
+
+<br>
+<br>
+<span>Bids:</span>
+<ul>
+	<% @bids.each do |bid| %>
+		<li>Bid amount: <%= bid.amount %></li>
+	<% end %>
+</ul>
+
+<br>
+<br>
+<span>Enter your bid:</span>
+<%= form_for [@product, @bid] do |f| %>
+	<%= f.label :amount %>
+	<%= f.number_field :amount %>
+	<br>
+
+	<%= f.submit %>
+<% end %>
+
+<br>
+<br>
+<% if @reviews %>
+	<span>Product reviews:</span>
+	<ul>
+		<% @reviews.each do |review| %>
+			<li><%=review.description%></li>
+		<% if current_user.id == review.user_id %>
+			<%=link_to("(Delete Review)", product_review_path(@product, review), :method => :delete) %>
+		<% end %>
+		<% end %>
+	</ul>
+<% else %>
+	<p>There are no reviews for this product yet, maybe you could write one</p>
+<% end %>
+
+<br>
+<br>
+<span>Add review:</span>
+<%= form_for [@product, @review] do |f| %>
+	<%= f.label :description %>
+	<%= f.text_area :description %>
+	<br>
+
+	<%= f.submit %>
+<% end %>
+
+<br>
+<br>
+<%= link_to 'Back', :back %>
