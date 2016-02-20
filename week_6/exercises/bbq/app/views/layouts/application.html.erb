@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Barbecues</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application', defer: true %>
+  <%= csrf_meta_tags %>
+</head>
+<body data-hook="controller-<%= controller_name %> action-<%= action_name %>">
+
+  <div class="container">
+
+	<% if user_signed_in? %>
+		<span>Hello, <%= current_user.name %>. You're currently logged in through: <%= current_user.email %></span>
+		<%=link_to("Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger")%>
+	<% else %>
+		<span>Hello, Stranger. Sign up maybe?</span>
+		<%=link_to("Sign Up", new_user_registration_path, class: "btn btn-primary")%>
+		<%=link_to("Log In", new_user_session_path, class: "btn btn-success")%>
+	<% end %>
+
+    <%= yield %>
+  </div>
+
+</body>
+</html>

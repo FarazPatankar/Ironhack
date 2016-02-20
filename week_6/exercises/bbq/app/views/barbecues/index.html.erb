@@ -1,0 +1,34 @@
+<h1>BBQs</h1>
+
+<a href="<%= new_barbecue_path %>" class="btn btn-primary">
+  Add a new BBQ
+</a>
+
+<ul class="list-unstyled">
+  <% @barbecues.each do |bbq| %>
+    <li data-bbq="<%= bbq.id %>">
+      <h2>
+        <a href="<%= barbecue_path(bbq.id) %>">
+          <%= bbq.title %>
+        </a>
+      </h2>
+
+      <dl>
+        <dt>Date:</dt>
+        <dd><%= format_date(bbq.date) %></dd>
+        <dt>Venue:</dt>
+        <dd><%= bbq.venue %></dd>
+      </dl>
+      <% if bbq.users.include?(current_user) %>
+
+        <span>You've already joined this bbq.</span>
+
+      <% else %>
+        <button class="btn btn-success" data-hook="join-bbq">
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          Join <%= bbq.title %>
+        </button>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

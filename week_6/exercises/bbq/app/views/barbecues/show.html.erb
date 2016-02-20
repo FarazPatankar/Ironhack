@@ -1,0 +1,45 @@
+<h1>BBQ</h1>
+
+<div data-hook="bbq-info" data-bbq="<%= params[:id] %>"></div>
+
+<div class="row">
+
+	<div class="col-sm-6">
+		<div>
+			<h4>Items:</h4>
+			<ul class="js-item-list">
+				<% if @items %>
+					<% @items.each do |item| %>
+					<li>
+						<%= item.name %>
+					</li>
+					<% end %>
+				<% end %>
+			</ul>
+		</div>
+		<br>
+		<div>
+			<%= form_for [@barbecue, @item], :url => url_for(:controller => 'barbecues_api', :action => 'create_item') do |f| %>
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+
+				<%= f.submit "Add Item", :class => "js-create-item", :data => {:id => @barbecue.id} %>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="col-sm-6">
+		<h4>Attending:</h4>
+		<ul>
+			<% @users.each do |user| %>
+			<li>
+				<%= user.name %>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+
+</div>
+
+<br>
+<a href="<%= barbecues_path %>">Back to list of BBQs</a>
