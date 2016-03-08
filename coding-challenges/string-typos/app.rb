@@ -46,4 +46,4 @@ puts typo?("cake", "cke") #=> true
 puts typo?("cake", "ck") #=> false
 puts typo?("cake", "casker") #=> false
 puts typo?("cake", "base") #=> false
-puts typo?("pizza", "puzza")
+puts typo?("pizza", "puzza") #=> true
