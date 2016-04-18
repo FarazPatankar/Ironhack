@@ -1,0 +1,16 @@
+<!-- app/views/text_inspections/new.html.erb -->
+
+<h1>Word Central</h1>
+
+<h2>Submit text for inspection</h2>
+
+<form action="/asciis" method="post">
+  <div>
+    <label for="asciis_user_text">Text</label>
+    <textarea name="asciis[user_text]" id="asciis_user_text"></textarea>
+  </div>
+
+  <button type="submit">Submit text</button>
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>

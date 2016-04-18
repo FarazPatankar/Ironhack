@@ -1,0 +1,23 @@
+<p>This is what you entered: <%= @text %></p>
+
+<br>
+
+<p>Here is the word count: <%= @word_count %></p>
+
+<br>
+
+<p>Time to read: <%= @time_to_read %></p>
+
+<br>
+
+<p>Most used words</p>
+
+<% @frequency.each_with_index do |el, i| %>
+	<span><%= i+1 %>) <%= el[0].capitalize %>: </span>
+	<span><%= el[1] %></span>
+	<br>
+<% end %>
+
+<br>
+
+<%= link_to "Home", "/" %>
