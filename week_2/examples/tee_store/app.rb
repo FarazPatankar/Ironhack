@@ -1,7 +1,7 @@
 require "sinatra"
 require "sinatra/reloader" if development?
 
-inventory = [ "Deep V T-Shirt", "Ed Hardy T-Shirt", "Cat T-Shirt"]
+inventory = [ "A T-Shirt", "Another T-Shirt", "Yet Another T-Shirt"]
 
 enable(:sessions)
 
