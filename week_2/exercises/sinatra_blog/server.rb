@@ -1,5 +1,7 @@
 require "sinatra"
 require "sinatra/reloader" if development?
+require 'httparty'
+require 'json'
 
 require_relative("lib/blog.rb")
 require_relative("lib/post.rb")
@@ -42,6 +44,7 @@ post "/create_post" do
 		author = author.gsub(/</, "&lt;").gsub(/>/, "&gt;")
 		new_post = Post.new(title, content, Date.today, author, category)
 		blog.add_post(new_post)
+		bot_away
 		redirect to("/")
 	end
 end
@@ -59,3 +62,10 @@ get "/posts_in/:category" do
 	@posts_by_category = new_blog.posts_by_author(@category)
 	erb(:category)
 end
+
+def bot_away
+	slack_webhook = "https://hooks.slack.com/services/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"
+    HTTParty.post slack_webhook, body: {"text" => "Does this work?", "username" => "#slack-api-test", "channel" => "#slack-api-test"}.to_json, headers: {'content-type' => 'application/json'}
+end
+
+curl -X POST --data-urlencode 'payload={"channel": "@greyceli", "username": "justanotherbot", "text": "You are the best", "icon_emoji": ":alien:"}' https://hooks.slack.com/services/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
